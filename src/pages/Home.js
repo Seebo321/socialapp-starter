@@ -7,6 +7,7 @@ import { Carousel } from 'antd';
 import UserData from "../components/getUsers/getUsers"
 import funtable from "../pages/assets/photo1.jpg"
 import clubspot from "../pages/assets/photo4.jpg"
+import { Link } from "react-router-dom";
 class Home extends React.Component {
 
 
@@ -45,7 +46,7 @@ class Home extends React.Component {
           </Carousel>
         </div>
         <LoginForm />
-      Link to="/register"><p>Register</p></Link>
+      <Link to="/register"><p>Register</p></Link>
         <RegistrationForm />
 
       </div>
