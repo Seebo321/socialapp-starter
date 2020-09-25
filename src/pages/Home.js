@@ -7,7 +7,7 @@ import { Carousel } from 'antd';
 import UserData from "../components/getUsers/getUsers"
 import funtable from "../pages/assets/photo1.jpg"
 import clubspot from "../pages/assets/photo4.jpg"
-
+import winepicture from "../pages/assets/photo5.jpg"
 class Home extends React.Component {
 
 
@@ -37,7 +37,7 @@ class Home extends React.Component {
               <h3 style={contentStyle}><img className="imageslide"src={ clubspot}style={{height:'300px'} }/></h3>
             </div>
             <div>
-              <h3 style={contentStyle}><img className="imageslide"src={ funtable}style={{height:'100px'} }/></h3>
+              <h3 style={contentStyle}><img className="imageslide"src={ winepicture}style={{height:'100px'} }/></h3>
             </div>
             <div>
               <h3 style={contentStyle}><img className="imageslide"src={ funtable}style={{height:'100px'} }/></h3>
