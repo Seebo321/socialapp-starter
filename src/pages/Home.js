@@ -4,10 +4,10 @@ import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import RegistrationForm from "../components/RegistrationForm/RegistrationForm"
 import { Carousel } from 'antd';
-import UserData from "../components/getUsers/getUsers"
 import funtable from "../pages/assets/photo1.jpg"
 import clubspot from "../pages/assets/photo4.jpg"
 import winepicture from "../pages/assets/photo5.jpg"
+import { Link } from "react-router-dom";
 class Home extends React.Component {
 
 
@@ -23,6 +23,7 @@ class Home extends React.Component {
 
     return (
       <div className="Home">
+
 
 
         <div className="site-layout-content">
@@ -44,8 +45,10 @@ class Home extends React.Component {
             </div>
           </Carousel>
         </div>
+      <div className='loginform'>
         <LoginForm />
-        <RegistrationForm />
+      <Link to="/register"><p>Register</p></Link>
+      </div>
       </div>
 
     );
