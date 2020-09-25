@@ -16,6 +16,7 @@ class GetMessage extends Component {
       this.setState({
         data: result,
       });
+   
     });
   }
   forMessages(item) {
@@ -33,7 +34,7 @@ class GetMessage extends Component {
           <h1>loading</h1>
         </div>
       );
-    // console.log(this.state.data.data.messages[0].text);
+    console.log(this.state.data.data.messages);
     return (
       <div>
         <div>
