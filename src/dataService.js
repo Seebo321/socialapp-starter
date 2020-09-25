@@ -1,4 +1,5 @@
 import axios from "axios";
+import { store } from "./redux"
 
 class DataService {
   constructor(
@@ -15,8 +16,17 @@ class DataService {
   getUsers() {
     return this.client.get(this.url + "/users?limit=10");
   }
-
-
+  postLike(data) {
+    const { token } = store.getState().auth.login.result
+    console.log(data)
+    return this.client.post(this.url + '/likes', data, {
+      headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+      }
+    }
+  )
+  }
   getMessages() {
     return this.client.get(this.url + "/messages?limit=10");
   }

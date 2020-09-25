@@ -3,7 +3,6 @@ import LoginForm from "../components/loginForm/LoginForm";
 // import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import { Layout, Menu } from "antd";
-import UserData from "../components/getUsers/getUsers";
 import { Link } from "react-router-dom";
 
 class Home extends React.Component {
@@ -41,8 +40,6 @@ class Home extends React.Component {
         </Layout>
 
         <Menu />
-        <h2>Random list of users</h2>
-        <UserData />
       </div>
     );
   }

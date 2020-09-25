@@ -1,12 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import DataService from "../../dataService";
 
-class GetMessage extends Component {
+class GetMessage extends React.Component {
   constructor(props) {
     super(props);
     this.client = new DataService();
     this.state = {
       data: 0,
+      like: 0,
     };
   }
 
@@ -24,6 +25,14 @@ class GetMessage extends Component {
   }
   componentDidMount() {
     this.getAllMessages();
+  }
+  likes = (event) => {
+    let like = this.state.like
+    let likedMessage = { messageId: Number(event.target.id) }
+    return this.client.postLike(likedMessage).then((res) => {
+      console.log(res)
+      this.setState({ like: like + 1 })
+    })
   }
 
   render() {
@@ -44,6 +53,7 @@ class GetMessage extends Component {
                 <div className="messageContainer">
                   <h1 className="username">{messageObject.username}</h1> <br />{" "}
                   <p className="message">{messageObject.text}</p>
+                  <button onClick={this.likes}>Like</button>
                 </div>
               </li>
             ))}
