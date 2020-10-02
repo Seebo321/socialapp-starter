@@ -22,7 +22,10 @@ class GetMessage extends Component {
     });
   }
  
-
+  hello(e){
+    
+    console.log(e.target.id)
+  }
  
   componentDidMount() {
     this.getAllMessages()
@@ -43,10 +46,11 @@ class GetMessage extends Component {
           <ul>
             {this.state.data.data.messages.map((messageObject) => (
               <li key={messageObject.id}>
-                {" "}
+               
                 <div className="messageContainer">
                   <h1 className="username">{messageObject.username}</h1> <br />{" "}
                   <p className="message">{messageObject.text}</p>
+                  <button id={messageObject.id} onClick={this.hello}>hello</button>
                 </div>
               </li>
             ))}
