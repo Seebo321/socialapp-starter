@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import Menu1 from "../components/menu/Menu"
-import Menu from "../components/menu/Menu";
+
 import DataService from "../dataService";
 import GetMessages from "../components/getMessages/GetMessages";
-import { Layout, Breadcrumb } from 'antd';
-import { userIsAuthenticated } from "../redux/HOCs";
+import { Layout } from 'antd';
+
 class NewsFeed extends React.Component {
   client = new DataService();
   state = { messages: [] };
@@ -45,12 +45,12 @@ const { Header, Content, Footer } = Layout;
       <Menu1 isAuthenticated={this.props.isAuthenticated} />
     </Header>
     <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
-      <Breadcrumb style={{ margin: '16px 0' }}>
+     
       <h1>Timeline</h1>
         <GetMessages />
         
 
-      </Breadcrumb>
+      
       <div className="site-layout-background" style={{ padding: 24, minHeight: 380 }}>
         Content
       </div>

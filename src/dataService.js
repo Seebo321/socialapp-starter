@@ -16,7 +16,7 @@ class DataService {
   }
 
   getMessages() {
-    return this.client.get(this.url + "/messages?limit=10");
+    return  this.client.get(this.url + "/messages?limit=10");
   }
   GetUserPicture(username) {
     return this.client.get(this.url + "/users/" + username + "/picture");

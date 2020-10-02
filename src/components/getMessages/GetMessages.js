@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import { setInterval } from "timers";
 import DataService from "../../dataService";
+
 
 class GetMessage extends Component {
   constructor(props) {
@@ -19,15 +21,13 @@ class GetMessage extends Component {
    
     });
   }
-  forMessages(item) {
-    document.getElementById("test").innerHTML +=
-      "Username says " + item.text + "<br>";
-  }
-  
-  componentDidMount() {
-    this.getAllMessages();
-  }
+ 
 
+ 
+  componentDidMount() {
+    this.getAllMessages()
+ 
+}
   render() {
     if (this.state.data === 0)
       return (
@@ -36,6 +36,7 @@ class GetMessage extends Component {
         </div>
       );
     console.log(this.state.data.data.messages);
+    
     return (
       <div>
         <div>
