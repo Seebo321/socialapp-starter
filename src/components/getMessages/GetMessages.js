@@ -23,6 +23,7 @@ class GetMessage extends Component {
     document.getElementById("test").innerHTML +=
       "Username says " + item.text + "<br>";
   }
+  
   componentDidMount() {
     this.getAllMessages();
   }
