@@ -1,9 +1,6 @@
 import axios from "axios";
-<<<<<<< HEAD
 import { store } from "./redux"
 
-=======
->>>>>>> 9a25519926c3b5d9a102cb4e986d8b5214db4352
 class DataService {
   constructor(
     url = "https://socialapp-api.herokuapp.com",
@@ -19,16 +16,30 @@ class DataService {
   getUsers() {
     return this.client.get(this.url + "/users?limit=10");
   }
-  postLike(data) {
-    const { token } = store.getState().auth.login.result
-    console.log(data)
-    return this.client.post(this.url + '/likes', data, {
-      headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
-      }
+  getAMessage(messageId) {
+    return this.client.get(this.url + "/messages/" + messageId)
+  }
+  postLike(data1) {
+    const {token} =JSON.parse(localStorage.getItem("login")).result
+    console.log(data1)
+    const likedata={
+      "messageId":data1
     }
-  )
+    return fetch(this.url + "/likes", {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + token,
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(likedata),
+    });
+   
+  }
+  getUsername() {
+    const loginData = JSON.parse(localStorage.getItem("login"))
+    const {username, token} = loginData.result
+    return username
   }
   getMessages() {
     return this.client.get(this.url + "/messages?limit=10");

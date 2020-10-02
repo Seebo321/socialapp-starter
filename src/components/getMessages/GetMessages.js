@@ -7,6 +7,7 @@ class GetMessage extends React.Component {
     this.client = new DataService();
     this.state = {
       data: 0,
+      likecount: 0,
       like: 0,
     };
   }
@@ -23,16 +24,30 @@ class GetMessage extends React.Component {
     document.getElementById("test").innerHTML +=
       "Username says " + item.text + "<br>";
   }
+  handlelike(){
+    const {username} =JSON.parse(localStorage.getItem("login")).result
+    console.log(this.state.like)
+    if(this.state.like===username){
+      alert('already liked this message and cant unlike XP')
+    }else{
+      console.log(this.state.likeID)
+      this.client.postLike(this.state.likeID)
+      .then(
+        this.setState({likecount: this.state.likecount +1})
+      ).then(result=>{this.getAllMessages()})
+    }
+  }
+  likes = (e) => {
+    this.client.getAMessage(e.target.id).then(result => {console.log(result.data)
+    this.setState({like:result.data.message.likes,
+      likeID: result.data.message.id  
+    })
+      
+    this.handlelike()
+    })
+  }
   componentDidMount() {
     this.getAllMessages();
-  }
-  likes = (event) => {
-    let like = this.state.like
-    let likedMessage = { messageId: Number(event.target.id) }
-    return this.client.postLike(likedMessage).then((res) => {
-      console.log(res)
-      this.setState({ like: like + 1 })
-    })
   }
 
   render() {
@@ -53,7 +68,8 @@ class GetMessage extends React.Component {
                 <div className="messageContainer">
                   <h1 className="username">{messageObject.username}</h1> <br />{" "}
                   <p className="message">{messageObject.text}</p>
-                  <button onClick={this.likes}>Like</button>
+                  <p>{messageObject.likes.length}</p>
+                  <button id={messageObject.id} onClick={this.likes}>Like &#128151;</button>
                 </div>
               </li>
             ))}
