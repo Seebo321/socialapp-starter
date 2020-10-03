@@ -1,52 +1,90 @@
-body, html {
-    height: 100%;
+ html {
+  
      background-size: cover; 
-     /* background-image: url('./pages/assets/photo3.jpg'); */
-    background-color: slateblue;
+   
+
   }
 
-  
-  
-  .slidedeck{
+  body {
+
+    height: 100%;
+    background-size: cover;
+  }
+#root{
+  height: 100%;
+}
+
+  .Home{
+background-size: cover;
+background-image: url('./pages/assets/photo3.jpg');
+height: 200%;
+opacity: 1;
+
+
+  }
+.slidedeck{
+
 display: flex;
 justify-content: center;
 }
 .imageslide{
-    display: flex;
-    justify-self: center;
+  height: 200%;
+  justify-self: center;
    position: relative;
    margin: auto;
-   
-
 }
-
-
-
-
 h1 {
 font-family:  Trattatello, fantasy;
 font-style: bold;
-font-size: 50px;
-color: firebrick;
+font-size: 100px;
 justify-content: center;
 }
+
+
+.multicolortext{
+
+  background-image: linear-gradient(to right, violet, indigo, green, blue, yellow, orange, red);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .Menu{
-  
     display: flex;
     flex-wrap: wrap;
     justify-content: center; 
     background: none;
 }
 
-.RegistrationForm{
+.Register{
 display: flex;
-justify-content: center
+justify-content: center;
 }
 
-.LoginForm {
-    
- display: flex;
+.loginform {
+display: flex;
  flex-wrap: wrap;
 justify-self: center;
 }
+.Profile {
+background: rgb(183,202,235); /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  rgba(183,202,235,1) 13%, rgba(183,202,235,1) 13%, rgba(144,178,228,1) 24%, rgba(68,131,214,1) 50%, rgba(38,106,202,1) 51%, rgba(41,130,225,1) 59%, rgba(56,159,244,1) 71%, rgba(38,117,202,1) 84%, rgba(25,67,145,1) 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(183,202,235,1) 13%,rgba(183,202,235,1) 13%,rgba(144,178,228,1) 24%,rgba(68,131,214,1) 50%,rgba(38,106,202,1) 51%,rgba(41,130,225,1) 59%,rgba(56,159,244,1) 71%,rgba(38,117,202,1) 84%,rgba(25,67,145,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center,  rgba(183,202,235,1) 13%,rgba(183,202,235,1) 13%,rgba(144,178,228,1) 24%,rgba(68,131,214,1) 50%,rgba(38,106,202,1) 51%,rgba(41,130,225,1) 59%,rgba(56,159,244,1) 71%,rgba(38,117,202,1) 84%,rgba(25,67,145,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7caeb', endColorstr='#194391',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+background-size: cover;
+opacity: 1;
+ height: 100%;
+} 
 
+
+.site-layout{
+background: #e24cc9; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  #e24cc9 0%, #570149 48%, #6a0c5a 69%, #943684 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover,  #e24cc9 0%,#570149 48%,#6a0c5a 69%,#943684 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center,  #e24cc9 0%,#570149 48%,#6a0c5a 69%,#943684 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e24cc9', endColorstr='#943684',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+opacity: 1;
+
+}

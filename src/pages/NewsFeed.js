@@ -21,7 +21,7 @@ class NewsFeed extends React.Component {
   };
   render() {
 
-const { Header, Content, Footer } = Layout;
+    const { Header, Content, Footer } = Layout;
     if (this.state.messages.length === 0) {
       return (
         <div className="NewsFeed">
@@ -30,41 +30,37 @@ const { Header, Content, Footer } = Layout;
           <h3>LOADING...</h3>
         </div>
       );
-   
- 
-
     }
 
     return (
       <div className="NewsFeed">
-        
+
+        <Menu />
+        <div id="menu-links">
+        </div>
         <Layout>
-         
-    <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
-      <div className="logo" />
-      <Menu1 isAuthenticated={this.props.isAuthenticated} />
-    </Header>
-    <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
-     
-      <h1>Timeline</h1>
-        <GetMessages />
+          <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
+            <div className="logo" />
+            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+              <Menu.Item><Link to="/">Profile</Link></Menu.Item>
+              <Link to="/" onClick={this.handleLogout}> Logout</Link>
+            </Menu>
+          </Header>
+          <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
+            <Breadcrumb style={{ margin: '16px 0' }}>
+              <h1>NewsFeed</h1>
+              <GetMessages />
+            </Breadcrumb>
+            <div className="site-layout-background" style={{ padding: 24, minHeight: 380 }}>
         
+            </div>
+          </Content>
+        </Layout>
 
-      
-      <div className="site-layout-background" style={{ padding: 24, minHeight: 380 }}>
-        Content
       </div>
-    </Content>
-    <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
-  </Layout>
-  
+    );
 
 
-        
-      </div>
-      );
-
-      
   }
 }
 
