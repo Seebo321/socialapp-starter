@@ -33,13 +33,13 @@ class DataService {
       body: JSON.stringify(data),
     });
   }
-    GetAUser(username){
-        return this.client.get(this.url+'/users/'+username)
-    }
-    userPhoto(username) {
-        this.client.get(this.url+"/users/" + username + "/picture")
-        console.log(this.userPhoto)
-    }
+  GetAUser(username) {
+    return this.client.get(this.url + "/users/" + username);
+  }
+  userPhoto(username) {
+    this.client.get(this.url + "/users/" + username + "/picture");
+    console.log(this.userPhoto);
+  }
 
     // if this.likes.some()
     getToken () {

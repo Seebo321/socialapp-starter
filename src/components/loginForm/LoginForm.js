@@ -8,20 +8,20 @@ import "./LoginForm.css";
 
 class LoginForm extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
     };
   }
 
-  handleLogin = e => {
+  handleLogin = (e) => {
     e.preventDefault();
     this.props.login(this.state);
     console.log ('tried to log in ')
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 

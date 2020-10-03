@@ -1,4 +1,4 @@
-import React from "react";  
+import React from "react";
 // import axios from "axios";
 import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -29,7 +29,6 @@ class App extends React.Component {
         <Route exact path="/user/:username" component={UserDisplay} />
         <Route exact path="/userfeed" component={UserFeed} />
         <Route exact path="*" component={NotFound} />
-
       </Switch>
     );
   }

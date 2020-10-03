@@ -21,16 +21,18 @@ class GetMessage extends Component {
    
     });
   }
- 
-  hello(e){
-    
-    console.log(e.target.id)
+  forMessages(item) {
+    document.getElementById("test").innerHTML +=
+      "usernanme says " + item.text + "<br>";
   }
  
   componentDidMount() {
-    this.getAllMessages()
- 
-}
+    this.getAllMessages();
+    setInterval(() => {
+      this.getAllMessages();
+    }, 3000);
+  }
+
   render() {
     if (this.state.data === 0)
       return (

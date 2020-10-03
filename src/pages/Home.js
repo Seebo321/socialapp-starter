@@ -2,7 +2,6 @@ import React from "react";
 import LoginForm from "../components/loginForm/LoginForm";
 import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
-import RegistrationForm from "../components/RegistrationForm/RegistrationForm"
 import { Carousel } from 'antd';
 
 import funtable from "../pages/assets/photo1.jpg"
@@ -11,14 +10,12 @@ import winepicture from "../pages/assets/photo5.jpg"
 import eventflyer from "../pages/assets/photo8.jpg"
 import { Link } from "react-router-dom";
 class Home extends React.Component {
-
-
   render() {
     const contentStyle = {
-      height: '260px',
-      color: '#fff',
-      lineHeight: '200px',
-      textAlign: 'center',
+      height: "260px",
+      color: "#fff",
+      lineHeight: "200px",
+      textAlign: "center",
       // background: '#364d79',
     };
 
@@ -27,12 +24,9 @@ class Home extends React.Component {
 
     return (
       <div className="Home">
-
-
-
         <div className="site-layout-content">
           <Menu />
-         
+
           <Carousel className="slidedeck" autoplay>
             <div>
          
@@ -63,8 +57,6 @@ class Home extends React.Component {
     
 
   }
-
 }
-
 
 export default userIsNotAuthenticated(Home);
