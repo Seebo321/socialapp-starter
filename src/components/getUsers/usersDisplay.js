@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import DataService from "../../dataService"
 import { Link } from "react-router-dom";
 // function UserDisplay(props) {
@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 // export default UserDisplay;
 
 
-class UserDisplay extends Component {
+class UserDisplay extends React.Component {
 
   //set our initial state and set up our service as this.client on this component
   constructor(props) {

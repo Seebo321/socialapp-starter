@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import DataService from "../../dataService";
 
-class UserData extends Component {
+class UserData extends React.Component {
 
 
   //set our initial state and set up our service as this.client on this component
