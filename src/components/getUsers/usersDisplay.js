@@ -68,7 +68,7 @@ componentDidMount(){
     
     console.log(this.state)
     return(
-      <div><div><Link to='/'>home</Link></div>
+      <div className="Profile"><div><Link to='/'>home</Link></div>
        
     <h1>hello, I am {this.state.userinfo.displayName}</h1>
         < img 

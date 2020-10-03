@@ -3,8 +3,11 @@ import LoginForm from "../components/loginForm/LoginForm";
 import Menu from "../components/menu/Menu";
 import { userIsNotAuthenticated } from "../redux/HOCs";
 import { Carousel } from 'antd';
+
 import funtable from "../pages/assets/photo1.jpg"
 import clubspot from "../pages/assets/photo4.jpg"
+import winepicture from "../pages/assets/photo5.jpg"
+import eventflyer from "../pages/assets/photo8.jpg"
 import { Link } from "react-router-dom";
 class Home extends React.Component {
 
@@ -16,8 +19,10 @@ class Home extends React.Component {
       lineHeight: '200px',
       textAlign: 'center',
       // background: '#364d79',
-     
     };
+
+   
+    
 
     return (
       <div className="Home">
@@ -30,16 +35,18 @@ class Home extends React.Component {
           <Carousel className="slidedeck" autoplay>
             <div>
          
-              <h3 style={contentStyle}> <img className="imageslide" src={ funtable}style={{height:'300px'} }/></h3>
+              <h3 style={contentStyle}> <img className="imageslide" src={ funtable}  alt='funtable' style={{height:'300px'} }/></h3>
             </div>
             <div>
-              <h3 style={contentStyle}><img className="imageslide"src={ clubspot}style={{height:'300px'} }/></h3>
+              <h3 style={contentStyle}><img className="imageslide"src={ clubspot} alt='club spot' style={{height:'300px'} }/></h3>
             </div>
             <div>
-              <h3 style={contentStyle}><img className="imageslide"src={ funtable}style={{height:'100px'} }/></h3>
+
+              <h3 style={contentStyle}><img className="imageslide"src={ winepicture}style={{height:'300px'} }/></h3>
             </div>
             <div>
-              <h3 style={contentStyle}><img className="imageslide"src={ funtable}style={{height:'100px'} }/></h3>
+              <h3 style={contentStyle}><img className="imageslide"src={ eventflyer}style={{height:'300px'} }/></h3>
+
             </div>
           </Carousel>
         </div>
@@ -47,9 +54,12 @@ class Home extends React.Component {
         <LoginForm />
       <Link to="/register"><p>Register</p></Link>
       </div>
+      
       </div>
+      
 
     );
+    
 
   }
 

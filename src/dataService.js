@@ -42,7 +42,7 @@ class DataService {
     return username
   }
   getMessages() {
-    return this.client.get(this.url + "/messages?limit=10");
+    return  this.client.get(this.url + "/messages?limit=10");
   }
   GetUserPicture(username) {
     return this.client.get(this.url + "/users/" + username + "/picture");
@@ -85,6 +85,28 @@ class DataService {
         Accept: "application/json"},
             body: JSON.stringify(textdata)
       })}
+
+
+
+      UpdatePicture(formdata){ 
+        const {token} =JSON.parse(localStorage.getItem("login")).result
+        const {username} =JSON.parse(localStorage.getItem("login")).result
+        console.log(formdata)
+        return this.client.put(this.url + "/users/"+username+'/picture',formdata, {
+          method:"PUT",
+               headers: { Authorization: "Bearer " + token, 
+            "Content-Type": "multipart/form-data",
+          Accept: "application/json"},
+    
+        })}
+        
+        
+        
+        
+   
 }
+        
+       
+
 
 export default DataService;
