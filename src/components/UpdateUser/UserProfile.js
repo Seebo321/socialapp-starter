@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import DataService from "../../dataService"
-import { Link } from "react-router-dom";
 import './UserProfile.css'
 class UserProfile extends Component {
   constructor(props)
@@ -12,6 +11,7 @@ class UserProfile extends Component {
     displayName: 0,
     about:0,
     password:0,
+    update:200,
 
     }
   }
@@ -29,6 +29,9 @@ class UserProfile extends Component {
     })
     
   }
+  show(){
+    document.getElementById('bio').classList.remove('hide')
+  }
   getthepicture(){
     return this.client.GetUserPicture(this.state.userinfo.username).then(result => { 
       this.setState({
@@ -39,6 +42,20 @@ class UserProfile extends Component {
     })
     
   }
+  createFormData = (event) =>{
+    const file =event.target.files[0]
+    const formData = new FormData()
+    formData.append("picture",file)
+   
+   const timestamp=Date.now()
+   const picture='https://socialapp-api.herokuapp.com/users/'+this.state.userinfo.username+'/picture?t='+timestamp
+    this.setState({picture},this.upload(formData))
+   
+}
+upload(formData){
+this.client.UpdatePicture(formData)
+this.getthepicture()
+}
 handleSubmit = (event) => {
   
  let displayNameInput=event.target.elements.displayName.value
@@ -74,12 +91,17 @@ componentDidMount(){
         < img 
         height='200'
         width='200'
-        src={this.state.picture} alt=''/><button>new picture</button>
+        src={this.state.picture} alt=''/>
+        <br/><input type="file"
+        accept ="image/*"
+        name="picture"
+        onChange={this.createFormData}
+        />
         <div><h3>About me:
            <br/>
            {this.state.userinfo.about}
-        </h3></div><button>Update Bio</button>
-        <div className='hide'>
+        </h3></div><button onClick={this.show}>Update Bio</button>
+        <div id ='bio' className ='hide'>
           <form onSubmit={this.handleSubmit} >
             <div>Update Display Name</div>
             <label>Change your Display Name! </label><input type='text' 
@@ -100,7 +122,7 @@ componentDidMount(){
             
             <button type='submit'>Update</button>
             </form></div>
-        <Link to='/'>hello</Link>
+        
 
 
 

@@ -4,11 +4,11 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
-import LoginForm from "./components/loginForm/LoginForm";
 import "./App.css";
 import NewsFeed from "./pages/NewsFeed";
 import Register from "./pages/Register";
 import UserDisplay  from "./components/getUsers/usersDisplay"
+import UserFeed from "./pages/UserList"
 
 class App extends React.Component {
   render() {
@@ -27,6 +27,7 @@ class App extends React.Component {
 
         <Route exact path="/messagefeed" component={NewsFeed} />
         <Route exact path="/user/:username" component={UserDisplay} />
+        <Route exact path="/userfeed" component={UserFeed} />
         <Route exact path="*" component={NotFound} />
 
       </Switch>
