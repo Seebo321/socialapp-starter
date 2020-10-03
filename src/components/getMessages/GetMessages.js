@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import { setInterval } from "timers";
 import DataService from "../../dataService";
@@ -9,6 +10,8 @@ class GetMessage extends Component {
     this.client = new DataService();
     this.state = {
       data: 0,
+      likecount: 0,
+      like: 0,
     };
   }
 
@@ -26,7 +29,30 @@ class GetMessage extends Component {
     
     console.log(e.target.id)
   }
- 
+
+  handlelike(){
+    const {username} =JSON.parse(localStorage.getItem("login")).result
+    console.log(this.state.like)
+    if(this.state.like===username){
+      alert('already liked this message and cant unlike XP')
+    }else{
+      console.log(this.state.likeID)
+      this.client.postLike(this.state.likeID)
+      .then(
+        this.setState({likecount: this.state.likecount +1})
+      ).then(result=>{this.getAllMessages()})
+    }
+  }
+  likes = (e) => {
+    this.client.getAMessage(e.target.id).then(result => {console.log(result.data)
+    this.setState({like:result.data.message.likes,
+      likeID: result.data.message.id  
+    })
+      
+    this.handlelike()
+    })
+  }
+
   componentDidMount() {
     this.getAllMessages()
  
@@ -50,7 +76,10 @@ class GetMessage extends Component {
                 <div className="messageContainer">
                   <h1 className="username">{messageObject.username}</h1> <br />{" "}
                   <p className="message">{messageObject.text}</p>
-                  <button id={messageObject.id} onClick={this.hello}>hello</button>
+
+                  <p>{messageObject.likes.length}</p>
+                  <button id={messageObject.id} onClick={this.likes}>Like &#128151;</button>
+
                 </div>
               </li>
             ))}
