@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
-// import Menu from "../components/menu/Menu";
+
+import Menu1 from "../components/menu/Menu"
+
 import DataService from "../dataService";
 import GetMessages from "../components/getMessages/GetMessages";
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout } from 'antd';
 
 class NewsFeed extends React.Component {
   client = new DataService();
@@ -14,6 +15,10 @@ class NewsFeed extends React.Component {
       .getMessages()
       .then((response) => this.setState({ messages: response.data.messages }));
   }
+  handleLogout = (event) => {
+    event.preventDefault();
+    this.props.logout();
+  };
   render() {
 
     const { Header, Content, Footer } = Layout;
@@ -29,6 +34,7 @@ class NewsFeed extends React.Component {
 
     return (
       <div className="NewsFeed">
+
         <Menu />
         <div id="menu-links">
         </div>
@@ -50,6 +56,7 @@ class NewsFeed extends React.Component {
             </div>
           </Content>
         </Layout>
+
       </div>
     );
 

@@ -1,7 +1,6 @@
 import React from "react";
-import Menu from "../components/menu/Menu";
+import Menu1 from "../components/menu/Menu";
 import { userIsAuthenticated } from "../redux/HOCs";
-import UserData from "../components/getUsers/getUsers";
 import Message from "../components/message/Message";
 import UserProfile from "../components/UpdateUser/UserProfile"
 class Profile extends React.Component {
@@ -11,13 +10,15 @@ class Profile extends React.Component {
 
     return (
       <div className="Profile">
+
         <div className="profile2">
           <Menu isAuthenticated={this.props.isAuthenticated} />
           <UserProfile
             name={this.props.match.params.username} />
           <Message />
-          <UserData />
+        
         </div>
+
       </div>
     );
   }

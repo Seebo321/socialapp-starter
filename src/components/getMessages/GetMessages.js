@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import { setInterval } from "timers";
 import DataService from "../../dataService";
+
 
 class GetMessage extends Component {
   constructor(props) {
@@ -16,16 +18,19 @@ class GetMessage extends Component {
       this.setState({
         data: result,
       });
+   
     });
   }
-  forMessages(item) {
-    document.getElementById("test").innerHTML +=
-      "Username says " + item.text + "<br>";
+ 
+  hello(e){
+    
+    console.log(e.target.id)
   }
+ 
   componentDidMount() {
-    this.getAllMessages();
-  }
-
+    this.getAllMessages()
+ 
+}
   render() {
     if (this.state.data === 0)
       return (
@@ -33,17 +38,19 @@ class GetMessage extends Component {
           <h1>loading</h1>
         </div>
       );
-    // console.log(this.state.data.data.messages[0].text);
+    console.log(this.state.data.data.messages);
+    
     return (
       <div>
         <div>
           <ul>
             {this.state.data.data.messages.map((messageObject) => (
               <li key={messageObject.id}>
-                {" "}
+               
                 <div className="messageContainer">
                   <h1 className="username">{messageObject.username}</h1> <br />{" "}
                   <p className="message">{messageObject.text}</p>
+                  <button id={messageObject.id} onClick={this.hello}>hello</button>
                 </div>
               </li>
             ))}
