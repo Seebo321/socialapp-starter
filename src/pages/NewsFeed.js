@@ -1,10 +1,10 @@
 import React from "react";
-
+import { userIsAuthenticated } from "../redux/HOCs";
 import Menu1 from "../components/menu/Menu"
 import { Link } from "react-router-dom";
 import DataService from "../dataService";
 import GetMessages from "../components/getMessages/GetMessages";
-import { Layout, Menu, Breadcrumb } from "antd";
+import { Layout, Breadcrumb } from "antd";
 import Message from "../components/message/Message";
 
 class NewsFeed extends React.Component {
@@ -43,49 +43,43 @@ class NewsFeed extends React.Component {
     return (
       <div className="NewsFeed">
 
-        <Menu />
-        <div id="menu-links">
-        </div>
+        
+  
 
-        <Layout>
-          <Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
-            <div className="logo" />
-            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
-              <Menu.Item key="1">Profile</Menu.Item>
-              <Menu.Item key="2">Logout</Menu.Item>
-              <Link to="/" onClick={this.handleLogout}>
-                Logout
-              </Link>
-              <Menu.Item key="3">nav 3</Menu.Item>
-            </Menu>
-          </Header>
+        
+         
+            
+        
           <Content
             className="site-layout"
-            style={{ padding: "0 50px", marginTop: 64 }}
-          >
-            <Breadcrumb style={{ margin: "16px 0" }}>
-              <Message />
-              <h1>Timeline</h1>
+            style={{ padding: "0 50px", marginTop: 10 }}
+          ><Menu1 isAuthenticated={this.props.isAuthenticated}/>
+            
+              
+              <div className='centerd'><h1 id='heading'>Timeline</h1>
+              <Message /></div>
+              
               <GetMessages />
-
-              <Breadcrumb.Item>Home</Breadcrumb.Item>
-              <Breadcrumb.Item>List</Breadcrumb.Item>
-              <Breadcrumb.Item>App</Breadcrumb.Item>
-            </Breadcrumb>
+              <Breadcrumb style={{ margin: '16px 0' }}>
+        <Breadcrumb.Item><Link to='/'>Home</Link></Breadcrumb.Item>
+        <Breadcrumb.Item><Link to="/userfeed">Users</Link></Breadcrumb.Item>
+        <Breadcrumb.Item><Link to="/messagefeed">NewsFeed</Link></Breadcrumb.Item>
+      </Breadcrumb>
             <div
               className="site-layout-background"
               style={{ padding: 24, minHeight: 380 }}
             >
-              Content
+            
             </div>
           </Content>
           <Footer style={{ textAlign: "center" }}>
             Ant Design ©2018 Created by Ant UED
           </Footer>
-        </Layout>
+        
+        
       </div>
     );
   }
 }
 
-export default NewsFeed;
+export default userIsAuthenticated(NewsFeed);

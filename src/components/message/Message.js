@@ -25,7 +25,7 @@ class Message extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='messageform'>
         <form onSubmit={this.postAMessage}>
           <div>
             <label>Post A Message</label> <br />

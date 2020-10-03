@@ -75,12 +75,12 @@ class GetMessage extends Component {
             {this.state.data.data.messages.map((messageObject) => (
               <li key={messageObject.id}>
                
-                <div className="messageContainer">
-                  <h1 className="username">{messageObject.username}</h1> <br />{" "}
+                <div className="messageboard">
+                  <h2 className="username">{messageObject.username}</h2> <br />{" "}
                   <p className="message">{messageObject.text}</p>
 
-                  <p>{messageObject.likes.length}</p>
-                  <button id={messageObject.id} onClick={this.likes}>Like &#128151;</button>
+                  
+                  <button id={messageObject.id} onClick={this.likes}>Like &#128151; {messageObject.likes.length}</button>
 
                 </div>
               </li>

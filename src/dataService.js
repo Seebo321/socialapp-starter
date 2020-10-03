@@ -14,7 +14,7 @@ class DataService {
     // get messages +/messages
   }
   getUsers() {
-    return this.client.get(this.url + "/users?limit=10");
+    return this.client.get(this.url + "/users?limit=40");
   }
   getAMessage(messageId) {
     return this.client.get(this.url + "/messages/" + messageId)

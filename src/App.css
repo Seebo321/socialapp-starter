@@ -17,7 +17,7 @@
   .Home{
 background-size: cover;
 background-image: url('./pages/assets/photo3.jpg');
-height: 200%;
+height: 110%;
 opacity: 1;
 
 
@@ -62,10 +62,12 @@ display: flex;
 justify-content: center;
 }
 
-.loginform {
-display: flex;
- flex-wrap: wrap;
-justify-self: center;
+.loginform2 {
+display: block;
+align-content: center;
+width: 100%;
+margin-left: 20px;
+align-content: center;
 }
 .Profile {
 background: rgb(183,202,235); /* Old browsers */
@@ -87,4 +89,54 @@ background: radial-gradient(ellipse at center,  #e24cc9 0%,#570149 48%,#6a0c5a 6
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e24cc9', endColorstr='#943684',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 opacity: 1;
 
+}
+.messageboard{
+  border: 2px solid black;
+  background-color: beige;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.messageboard h2{
+  font-size: 50px;
+}
+.messageboard button{
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+.centerd{
+  width: 100%;
+  text-align: center;
+}
+.messageform input{
+  width: 70%;
+  height: 80px;
+}
+.messageform label{
+  color: yellowgreen;
+  font-size: 90px;
+  font-weight: 80;
+}
+.users{
+  display: flex;
+  float: left;
+  text-decoration: none;
+  border: 2px solid black;
+  background-color: grey;
+  width: 20%;
+  height:90px;
+  margin: 10px;
+  border-radius: 20px;
+  align-content: center;
+  padding-left: 15px;
+  font-size: large;
+}
+img{
+  border-radius: 50%;
+}
+#heading{
+  color: white;
+  text-shadow: yellow;
+}
+#homepic{
+  border-radius: 5%;
 }

@@ -1,22 +1,12 @@
 import React from 'react';
 import DataService from "../../dataService"
-import { Link } from "react-router-dom";
-// function UserDisplay(props) {
+import Menu1 from "../menu/Menu"
+import { userIsAuthenticated } from "../../redux/HOCs";
 
-//   let userData=DataService.getAUser(props)
-//   console.log(userData)
-//   return <div className="Welcome"><h1>{props.name}</h1>
-
-//   <h2>testing? {props.username}</h2>
-
-//   </div>;
-// }
-// export default UserDisplay;
 
 
 class UserDisplay extends React.Component {
 
-  //set our initial state and set up our service as this.client on this component
   constructor(props) {
     super(props)
     this.client = new DataService();
@@ -68,8 +58,8 @@ componentDidMount(){
     
     console.log(this.state)
     return(
-      <div className="Profile"><div><Link to='/'>home</Link></div>
-       
+      <div className="Profile"><Menu1 isAuthenticated={this.props.isAuthenticated}/>
+       <div className='centerd'>
     <h1>hello, I am {this.state.userinfo.displayName}</h1>
         < img 
         height='200'
@@ -78,9 +68,9 @@ componentDidMount(){
         <h3>About me:
            <br/>
            {this.state.userinfo.about}
-        </h3>
+        </h3></div>
         </div>
     )
   }
 }
-export default UserDisplay 
+export default userIsAuthenticated(UserDisplay);

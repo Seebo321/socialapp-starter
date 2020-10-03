@@ -28,17 +28,18 @@ class UserData extends React.Component {
     return (
       <div>
         {this.state.users.map(user =>
-          <h3 key={user.username}>
-            Here is  <Link to={{
+          
+          <div className='users'><h3 key={user.username}>
+           <Link to={{
               pathname: "/user/" + user.username,
               state: { fromDashboard: true }
             }}
               onClick={() =>
                 this.client.GetAUser(user.username).then(res => { console.log(res) })
               }
-            >{user.displayName}
+            ><p className='centerd'>Click here for <br/>{user.displayName}</p>
             </Link>
-          </h3>)}
+          </h3></div>)}
 
       </div>
     )

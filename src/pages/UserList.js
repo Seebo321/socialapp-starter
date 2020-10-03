@@ -4,7 +4,7 @@ import Menu1 from "../components/menu/Menu";
 import DataService from "../dataService";
 import { Layout, Menu, Breadcrumb } from 'antd';
 import UserData from "../components/getUsers/getUsers";
-import { withAsyncAction } from "../redux/HOCs"
+import { userIsAuthenticated } from "../redux/HOCs";
 class UserFeed extends React.Component {
   client = new DataService();
   state = { messages: [] };
@@ -32,38 +32,20 @@ const { Header, Content, Footer } = Layout;
 
     return (
       <div className="NewsFeed">
-        <Menu1 />
-        <div id="menu-links">
-          <Link to="/">Home</Link>         
-        </div>
-        
-
+       
         <Layout>
-    <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
-      <div className="logo" />
-      <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-        <Menu.Item key="1">Profile</Menu.Item>
-        <Menu.Item key="2">Logout</Menu.Item>
-        <Link to="/" >
-            Logout
-          </Link>
-        <Menu.Item key="3">nav 3</Menu.Item>
-      </Menu>
-    </Header>
-    <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
-      
-    <h1>Users</h1>
+   
+    <Content className="site-layout" style={{ padding: '0 50px', marginTop: 10 }}>
+    <Menu1 isAuthenticated={this.props.isAuthenticated}/>
+    <div className='centerd'><h1>Users</h1></div>
         <UserData/>
       <Breadcrumb style={{ margin: '16px 0' }}>
-        <Breadcrumb.Item>Home</Breadcrumb.Item>
-        <Breadcrumb.Item>List</Breadcrumb.Item>
-        <Breadcrumb.Item>App</Breadcrumb.Item>
+        <Breadcrumb.Item><Link to='/'>Home</Link></Breadcrumb.Item>
+        <Breadcrumb.Item><Link to="/userfeed">Users</Link></Breadcrumb.Item>
+        <Breadcrumb.Item><Link to="/messagefeed">NewsFeed</Link></Breadcrumb.Item>
       </Breadcrumb>
-      <div className="site-layout-background" style={{ padding: 24, minHeight: 380 }}>
-        Content
-      </div>
     </Content>
-    <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+    
   </Layout>
   
 
@@ -77,4 +59,4 @@ const { Header, Content, Footer } = Layout;
 }
 
 
-export default UserFeed;
+export default userIsAuthenticated(UserFeed);

@@ -30,22 +30,22 @@ class Home extends React.Component {
           <Carousel className="slidedeck" autoplay>
             <div>
          
-              <h3 style={contentStyle}> <img className="imageslide" src={ funtable}  alt='funtable' style={{height:'300px'} }/></h3>
+              <h3 style={contentStyle}> <img id='homepic' className="imageslide" src={ funtable}  alt='funtable' style={{height:'300px'} }/></h3>
             </div>
             <div>
-              <h3 style={contentStyle}><img className="imageslide"src={ clubspot} alt='club spot' style={{height:'300px'} }/></h3>
+              <h3 style={contentStyle}><img id='homepic' className="imageslide"src={ clubspot} alt='club spot' style={{height:'300px'} }/></h3>
             </div>
             <div>
 
-              <h3 style={contentStyle}><img className="imageslide"src={ winepicture}style={{height:'300px'} }/></h3>
+              <h3 style={contentStyle}><img id='homepic' className="imageslide"src={ winepicture}style={{height:'300px'} }/></h3>
             </div>
             <div>
-              <h3 style={contentStyle}><img className="imageslide"src={ eventflyer}style={{height:'300px'} }/></h3>
+              <h3 style={contentStyle}><img id='homepic' className="imageslide"src={ eventflyer}style={{height:'300px'} }/></h3>
 
             </div>
           </Carousel>
         </div>
-      <div className='loginform'>
+      <div className='loginform2'>
         <LoginForm />
       <Link to="/register"><p>Register</p></Link>
       </div>
