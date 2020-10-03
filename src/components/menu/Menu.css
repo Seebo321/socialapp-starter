@@ -11,10 +11,13 @@
   display: flex;
   padding-left: 1em;
 }
-
+.fullwidth{
+  width: 100%;
+  text-align: center;
+}
 #menu-links a {
   padding-right: 0.5em;
-  color: darkblue;
+  color: white;
   text-decoration: underline;
   cursor: pointer;
 }

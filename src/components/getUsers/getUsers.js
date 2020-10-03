@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import DataService from "../../dataService";
 
-class UserData extends Component {
+class UserData extends React.Component {
 
 
   //set our initial state and set up our service as this.client on this component
@@ -28,17 +28,18 @@ class UserData extends Component {
     return (
       <div>
         {this.state.users.map(user =>
-          <h3 key={user.username}>
-            Here is  <Link to={{
+          
+          <div className='users'><h3 key={user.username}>
+           <Link to={{
               pathname: "/user/" + user.username,
               state: { fromDashboard: true }
             }}
               onClick={() =>
                 this.client.GetAUser(user.username).then(res => { console.log(res) })
               }
-            >{user.displayName}
+            ><p className='centerd' id='users'>Click here for <br/>{user.displayName}</p>
             </Link>
-          </h3>)}
+          </h3></div>)}
 
       </div>
     )

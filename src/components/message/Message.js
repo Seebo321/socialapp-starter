@@ -16,8 +16,7 @@ class Message extends React.Component {
   };
 
   postAMessage = (e) => {
-   
-    console.log(e.target.elements.data.value);
+    e.preventDefault();
     return this.client.postMessage({
       text: e.target.elements.data.value,
     });
@@ -25,7 +24,7 @@ class Message extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='messageform'>
         <form onSubmit={this.postAMessage}>
           <div>
             <label>Post A Message</label> <br />
