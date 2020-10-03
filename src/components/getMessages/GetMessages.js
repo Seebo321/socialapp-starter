@@ -16,7 +16,6 @@ class GetMessage extends Component {
   }
 
   getAllMessages() {
-    console.log(this.state.data);
     return this.client.getMessages().then((result) => {
       this.setState({
         data: result,
@@ -31,11 +30,10 @@ class GetMessage extends Component {
 
   handlelike(){
     const {username} =JSON.parse(localStorage.getItem("login")).result
-    console.log(this.state.like)
     if(this.state.like===username){
       alert('already liked this message and cant unlike XP')
     }else{
-      console.log(this.state.likeID)
+      
       this.client.postLike(this.state.likeID)
       .then(
         this.setState({likecount: this.state.likecount +1})

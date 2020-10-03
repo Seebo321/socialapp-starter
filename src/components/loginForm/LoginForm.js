@@ -18,17 +18,12 @@ class LoginForm extends React.Component {
   handleLogin = (e) => {
     e.preventDefault();
     this.props.login(this.state);
-    console.log ('tried to log in ')
+    
   };
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
-
-  checklogin = e => {
-
-    console.log ('button works')
-  }
 
   render() {
     const layout = {
@@ -38,15 +33,6 @@ class LoginForm extends React.Component {
     const tailLayout = {
       wrapperCol: { offset: 8, span: 16 },
     };
-
-    const Demo = () => {
-      const onFinish = values => {
-        console.log('Success:', values);
-      };
-    }
-      const onFinishFailed = errorInfo => {
-        console.log('Failed:', errorInfo);
-      };
       const { loading, error } = this.props;
       return (
         <div className="LoginForm">

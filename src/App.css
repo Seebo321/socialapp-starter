@@ -17,7 +17,7 @@
   .Home{
 background-size: cover;
 background-image: url('./pages/assets/photo3.jpg');
-height: 110%;
+height: 130%;
 opacity: 1;
 
 
@@ -129,6 +129,12 @@ opacity: 1;
   align-content: center;
   padding-left: 15px;
   font-size: large;
+}
+#users{
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
 }
 img{
   border-radius: 50%;

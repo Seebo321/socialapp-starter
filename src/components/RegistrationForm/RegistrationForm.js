@@ -20,7 +20,7 @@ class RegistrationForm extends React.Component {
     e.preventDefault();
     this.client
       .registerUser(this.state)
-      .then((result) => console.log(result.data));
+      .then((result) => console.log('registered'));
     window.history.back();
   };
 

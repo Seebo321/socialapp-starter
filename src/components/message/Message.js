@@ -17,7 +17,6 @@ class Message extends React.Component {
 
   postAMessage = (e) => {
     e.preventDefault();
-    console.log(e.target.elements.data.value);
     return this.client.postMessage({
       text: e.target.elements.data.value,
     });

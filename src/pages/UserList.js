@@ -37,7 +37,7 @@ const { Header, Content, Footer } = Layout;
    
     <Content className="site-layout" style={{ padding: '0 50px', marginTop: 10 }}>
     <Menu1 isAuthenticated={this.props.isAuthenticated}/>
-    <div className='centerd'><h1>Users</h1></div>
+    <div className='centerd'><h1 id='heading'>Users</h1></div>
         <UserData/>
       <Breadcrumb style={{ margin: '16px 0' }}>
         <Breadcrumb.Item><Link to='/'>Home</Link></Breadcrumb.Item>

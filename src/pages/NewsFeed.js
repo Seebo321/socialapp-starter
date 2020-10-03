@@ -22,16 +22,7 @@ class NewsFeed extends React.Component {
   render() {
     const { Header, Content, Footer } = Layout;
     if (this.state.messages.length === 0) {
-      //   setInterval(() => {
-      //     fetch("GetMessages.js").then((response){
-      //       return response.json()
-      //     }).then((data){
-      //       textViewCount.textContent = data.textViewCount
-      //     }).catch((error){
-      //         console.log(error);
-      //     })
-      //   }, 3000);
-      // }
+  
       return (
         <div className="NewsFeed">
           <h1>Timeline</h1>
@@ -65,17 +56,8 @@ class NewsFeed extends React.Component {
         <Breadcrumb.Item><Link to="/userfeed">Users</Link></Breadcrumb.Item>
         <Breadcrumb.Item><Link to="/messagefeed">NewsFeed</Link></Breadcrumb.Item>
       </Breadcrumb>
-            <div
-              className="site-layout-background"
-              style={{ padding: 24, minHeight: 380 }}
-            >
             
-            </div>
           </Content>
-          <Footer style={{ textAlign: "center" }}>
-            Ant Design ©2018 Created by Ant UED
-          </Footer>
-        
         
       </div>
     );

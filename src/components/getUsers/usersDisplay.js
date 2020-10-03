@@ -25,7 +25,7 @@ class UserDisplay extends React.Component {
         userinfo: result.data.user
       })
       this.getthepicture(this.props.name)
-      console.log(this.state)
+      
       this.setState({
         mount:1
       })
@@ -40,7 +40,7 @@ class UserDisplay extends React.Component {
         mount:1
 
       })
-      console.log(this.state)
+     
     })
     
   }
@@ -52,11 +52,11 @@ componentDidMount(){
  
 }
     render() {
-      console.log(this.state)
+     
       if(this.state.mount===0)
       return(<div><h1>loading</h1></div>);
     
-    console.log(this.state)
+   
     return(
       <div className="Profile"><Menu1 isAuthenticated={this.props.isAuthenticated}/>
        <div className='centerd'>
