@@ -41,7 +41,7 @@ class GetMessage extends Component {
     }
   }
   likes = (e) => {
-    this.client.getAMessage(e.target.id).then(result => {console.log(result.data)
+    this.client.getAMessage(e.target.id).then(result => {
     this.setState({like:result.data.message.likes,
       likeID: result.data.message.id  
     })

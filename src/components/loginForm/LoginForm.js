@@ -3,7 +3,7 @@ import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../redux/HOCs";
 import "./LoginForm.css";
 
-
+import { Link } from "react-router-dom";
 
 
 class LoginForm extends React.Component {
@@ -35,6 +35,7 @@ class LoginForm extends React.Component {
     };
       const { loading, error } = this.props;
       return (
+        <div className='centerd'>
         <div className="LoginForm">
           <form id="login-form" onSubmit={this.handleLogin}> 
              <label htmlFor="username">Username</label> 
@@ -55,14 +56,15 @@ class LoginForm extends React.Component {
               <button type="submit" disabled={loading}>
               Login
           </button>  
+           <Link to="/register"><p>Register</p></Link>
            </form> 
            {loading && <Spinner name="circle" color="blue" />}
           {error && <p style={{ color: "red" }}>{error.message}</p>}
     
-   
+         
   
     
-        </div>
+        </div></div>
       );
     }
   }

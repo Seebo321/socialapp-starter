@@ -146,3 +146,16 @@ img{
 #homepic{
   border-radius: 5%;
 }
+.close{
+  background-color: blanchedalmond;
+ margin-bottom: -5px;
+ width: 3em;
+ font-size: 2em;
+ border-radius: 15%;
+}
+.closingdiv{
+  width:3.2em;
+}
+#profileInfo{
+  margin-bottom: 200px;
+}

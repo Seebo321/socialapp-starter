@@ -12,7 +12,7 @@ class Register extends React.Component {
             <div className="Home">
                 <Menu />
                 <RegistrationForm />
-                <Link to="/">Close</Link>
+                <div className='closingdiv'><Link to="/"><p className='close'>Close</p></Link></div>
                 <Footer style={{ textAlign: "center" }}>
                     Mix&Mingle
                 </Footer>

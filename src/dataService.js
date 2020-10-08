@@ -42,7 +42,7 @@ class DataService {
     return username
   }
   getMessages() {
-    return  this.client.get(this.url + "/messages?limit=10");
+    return  this.client.get(this.url + "/messages?limit=20");
   }
   GetUserPicture(username) {
     return this.client.get(this.url + "/users/" + username + "/picture");
